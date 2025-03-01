@@ -141,7 +141,7 @@ input {
 /*=============== HEADER SECTION ===============*/
 .header {
     width: 100%;
-    background: --var(--container-color);
+    background: transparent;
     position: fixed;
     top: 0;
     left: 0;
@@ -184,11 +184,54 @@ input {
     margin-left: auto;
 }
 
+.nav__toggle,
+.login__toggle,
+.nav__shop {
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+.nav__link {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    font-size: var(--normal-font-size);
+    transition: .3s;
+}
+
+.nav__link:hover {
+    color: var(--first-color);
+}
+
+.nav__toggle {
+    display: none;
+}
+
 
 /* Change background header */
 
 
 /* Active link */
+.active-link {
+    position: relative;
+}
+
+.active-link::before {
+    content: '';
+    position: absolute;
+    bottom: -.75rem;
+    left: 45%;
+    width: 5px;
+    height: 5px;
+    background: var(--title-color);
+    border-radius: 50%;
+
+}
 
 
 /*=============== MAIN ===============*/
