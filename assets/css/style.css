@@ -214,6 +214,10 @@ input {
 
 
 /* Change background header */
+.scroll-header {
+    background-color: var(--body-color);
+    box-shadow: 0 1px 4px var(--shadow);
+}
 
 
 /* Active link */
@@ -277,15 +281,67 @@ input {
 .home__details-img {
     position: absolute;
     bottom: 0;
-    right: 50%;
+    right: 58%;
+}
+
+
+.home__details-title,
+.home__details-subtitle {
+    display: block;
+    font-size: var(--small-font-size);
+    text-align: right;
+}
+
+.home__subtitle {
+    font-size: var(--h3-font-size);
+    text-transform: uppercase;
+    margin-bottom: var(--mb-1);
+}
+
+.home__title {
+    font-size: var(--biggest-font-size);
+    font-weight: var(--font-bold);
+    line-height: 109%;
+    margin-bottom: var(--mb-1-5);
+}
+
+.home__description {
+    margin-bottom: var(--mb-2-5);
+    padding-right: 2rem;
+}
+
+.home__buttons {
+    display: flex;
+    justify-content: space-between;
 }
 
 
 
 
-
-
 /* Swiper Class */
+.swiper-pagination {
+    position: initial;
+    margin-top: var(--mb-2-5);
+}
+
+.swiper-pagination-bullet {
+    width: 5px;
+    height: 5px;
+    background: var(--title-color);
+    opacity: 1;
+}
+
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0.5rem;
+}
+
+.swiper-pagination-bullet-active {
+    width: 1.5rem;
+    height: 5px;
+    border-radius: .5rem;
+}
+
+
 
 
 
@@ -302,6 +358,21 @@ input {
 
 .button:hover {
     background: var(--first-color-alt);
+}
+
+.button__icon {
+    font-size: 1.25rem;
+}
+
+.button--link {
+    color: var(--title-color);
+
+}
+
+.button--flex {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
 }
 
 
