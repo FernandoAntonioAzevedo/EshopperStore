@@ -52,7 +52,12 @@ function scrollHeader() {
   window.addEventListener('scroll', scrollHeader)
 
 /*=============== NEW SWIPER ===============*/
-
+var newSwiper = new Swiper(".new-swiper", {
+  spaceBetween: 16,
+  centeredSlides: true,
+  slidesPerView:  'auto',
+  loop: 'true',
+});
 
 /*=============== SHOW SCROLL UP ===============*/ 
 
