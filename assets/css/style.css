@@ -173,9 +173,14 @@ input {
     column-gap: .25rem;
 }
 
+.nav__logo:hover {
+    color: var(--first-color);
+}
+
 .nav__logo-icon {
     font-size: 1.25rem;
 }
+
 
 .nav__btns {
     display: flex;
@@ -613,9 +618,11 @@ input {
     margin-bottom: var(--mb-1);
 }
 
+
 .footer__logo-icon {
     font-size: 1rem;
 }
+
 
 .footer__description {
     margin-bottom: var(--mb-2-5);
@@ -650,6 +657,14 @@ input {
     row-gap: .35rem;
 }
 
+.footer__content, .footer__logo:hover {
+    color: var(--first-color);
+}
+
+.footer__content, .footer__link {
+    color: var(--text-color);
+}
+
 .footer_link {
     font-size: var(--small-font-size);
     color: var(--text-color);
@@ -657,7 +672,7 @@ input {
 }
 
 .footer__link:hover {
-    color: var(--title-color);
+    color: var(--first-color);
 }
 
 .footer__copy {
@@ -680,13 +695,47 @@ input {
 
 
 /*=============== SCROLL UP ===============*/
+.scrollup {
+    position: fixed;
+    right: 3rem;
+    bottom: -30%;
+    background: var(--first-color);
+    border-radius: .4rem;
+    display: inline-flex;
+    padding: .25rem;
+    z-index: var(--z-tooltip);
+    opacity: .5;
+    transition: .4s;
+   
+}
+
+.scrollup:hover {
+    opacity: 1;
+}
+
+.scrollup__icon {
+   font-size: 1.5rem;
+   color: #fff; 
+}
 
 
 /* Show Scroll Up*/
+.show-scroll {
+    bottom: 3rem;
+}
 
 
 /*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+    width: .60rem;
+    background: var(--scroll-bar-color);
+    border-radius: .5rem;
+}
 
+::-webkit-scrollbar-thumb {
+    background: var(--scroll-thumb-color);
+    border-radius: .5rem;
+}
 
 /*=============== LOGIN ===============*/
 .login {
@@ -899,9 +948,48 @@ input {
 
 /*=============== BREAKPOINTS ===============*/
 /* For large devices */
-@media screen and (max-width: 1200px) {}
+@media screen and (max-width: 1200px) {
+    .home__img {
+        height: 400px;
+    }
 
-@media screen and (max-width: 992px) {}
+    .swiper-pagination {
+        margin-top: var(--mb-2);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        margin-left: var(--mb-1-5);
+        margin-right: var(--mb-1-5);
+    }
+
+    .home__content {
+        padding: 8rem 0 2rem;
+    }
+
+    .home__img {
+        height: 300px;
+        transform: translateY(0);
+    }
+
+    .home__indicator {
+        bottom: initial;
+        left: initial;
+        top: 7rem;
+        right: 2rem;
+    }
+
+    .home__indicator::after {
+        top: -3rem;
+        height: 48px;
+    }
+
+    .home__details-img {
+        right: .5rem;
+        bottom: initial;
+    }
+}
 
 /* For medium devices */
 @media screen and (max-width: 767px) {}
