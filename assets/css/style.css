@@ -122,9 +122,13 @@ input {
 }
 
 .section__title,
-.breadcrumb__title,
+.breadcrump__title,
 .breadcrumb__subtitle {
     text-align: center;
+}
+
+.breadcrumb__subtitle span {
+    color: var(--first-color);
 }
 
 /*=============== LAYOUT ===============*/
@@ -576,7 +580,9 @@ input {
 }
 
 /*=============== SHOP PAGE ===============*/
-
+.shop__container {
+    grid-template-columns: 1.7fr 3.3fr;
+}
 
 /*=============== PAGINATION ===============*/
 
