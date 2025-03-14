@@ -701,6 +701,32 @@ input {
 }
 
 /*=============== PAGINATION ===============*/
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    column-gap: .8rem;
+    margin-top: var(--mb-2-5);
+    font-size: var(--normal-font-size);
+}
+
+.pagination span {
+    width: 2.2rem;
+    height: 2.2rem;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.pagination .current {
+    background-color: var(--first-color);
+    color: #fff;
+}
+
+.pagination__icon {
+    font-size: var(--h2-font-size);
+}
 
 
 /*=============== DETAILS PAGE ===============*/
@@ -1164,6 +1190,28 @@ input {
        row-gap: 2rem; 
     }
 
+    .shop__container {
+        grid-template-columns: 1.6fr 3.4fr;
+    }
+
+    .shop__content {
+        padding: 2rem 0 1.5rem 0;
+        border-radius: .75rem;
+    }
+
+    .shop__img {
+        width: 120px;
+    }
+
+    .shop__img,
+    .shop__subtitle {
+        margin-bottom: var(--mb-0-5);
+    }
+
+    .shop__title {
+        font-size: var(--normal-font-size);
+    }
+
 }
 
 /* For medium devices */
@@ -1248,6 +1296,21 @@ input {
         grid-template-columns: .7fr;
     }
 
+    /* Responsivo Produtos */
+    .shop__container {
+        grid-template-columns: 520px;
+        justify-content: center;
+        row-gap: 2rem;
+    }
+
+    .pagination {
+        justify-content: center;
+    }
+
+
+
+
+
     .footer__container {
         grid-template-columns: 1fr;
         row-gap: 2rem;
@@ -1275,6 +1338,29 @@ input {
     .login,
     .cart {
         width: 100%;
+    }
+
+    /* Responsivo produtos */
+    .shop__container {
+        grid-template-columns: .8fr;
+    }
+
+    .shop__items {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        padding: 1.15rem 1.4rem;
+    }
+
+    .pagination span {
+        height: 1.8rem;
+        width: 1.8rem;
+        line-height: 30px;
+    }
+
+    .pagination {
+        column-gap: .4rem;
     }
 }
 
@@ -1305,5 +1391,13 @@ input {
 
     .steps__card {
         padding: 1.5rem;
+    }
+
+    .shop__container {
+        grid-template-columns: 1fr;
+    }
+
+    .pagination span {
+        font-size: var(--small-font-size);
     }
 }
