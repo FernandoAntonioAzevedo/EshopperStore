@@ -452,13 +452,13 @@
             <img src="assets/img/details-2.png" alt="" class="lightbox__img">
             <div class="lightbox__caption">
                 <div class="caption__text">e-shopper</div>
-                <div class="caption__counter">1 de 4</div>
+                <div class="caption__counter"></div>
             </div>
         </div>
 
         <div class="lightbox__controls">
-            <div class="prev__item"><i class="bx bx-chevron-left"></i></div>
-            <div class="next__item"><i class="bx bx-chevron-right"></i></div>
+            <div class="prev__item" onclick="prevItem()"><i class="bx bx-chevron-left"></i></div>
+            <div class="next__item" onclick="nextItem()"><i class="bx bx-chevron-right"></i></div>
         </div>
     </div>
 
@@ -473,7 +473,59 @@
     <script>
         const productItems = document.querySelectorAll(".product__img"),
             totalProductItems = productItems.length;
-            console.log(totalProductItems)
+            lightbox = document.querySelector(".lightbox"),
+            lightboxImg = lightbox.querySelector(".lightbox__img"),
+            lightboxClose = lightbox.querySelector(".lightbox__close"),
+            lightboxCounter = lightbox.querySelector(".caption__counter");
+        let itemIndex = 0;
+        
+        for(let i=0; i<totalProductItems; i++) {
+            productItems[i].addEventListener("click", function() {
+                itemIndex=i;
+                changeItem();
+                toggleLightbox();
+            })    
+        }
+
+        function prevItem() {
+            if(itemIndex === 0) {
+                itemIndex=totalProductItems-1;
+            }
+
+            else {
+                itemIndex--
+            }
+            changeItem()
+        }
+
+        function nextItem() {
+            if(itemIndex === totalProductItems-1) {
+                itemIndex=0;
+            }
+
+            else {
+                itemIndex++
+            }
+            changeItem()
+        }
+
+        
+        function toggleLightbox() {
+            lightbox.classList.toggle("open");
+        }
+
+        function changeItem() {
+            imgSrc = productItems[itemIndex].querySelector(".product__img img").getAttribute("src");
+            lightboxImg.src = imgSrc;
+            lightboxCounter.innerHTML = (itemIndex + 1) + " de " + totalProductItems;
+        }
+
+        // Close lightbox 
+        lightbox.addEventListener("click", function() {
+            if(event.target === lightboxClose || event.target === lightbox) {
+                toggleLightbox()
+            }
+        })
     </script>
 
 
